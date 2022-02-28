@@ -1,0 +1,54 @@
+apiVersion: "keptn.sh/v1"
+kind: "KeptnSequence"
+metadata:
+  name: "podtato-delivery-dev"
+spec:
+  sequence:
+    name: "artifact-delivery"
+    tasks:
+    - name: "promotion"
+    - name: "deployment"
+      properties:
+        deploymentstrategy: "user_managed"
+    - name: "smoke-test"
+    - name: "release"
+
+---
+apiVersion: "keptn.sh/v1"
+kind: "KeptnSequence"
+metadata:
+  name: "podtato-delivery-hardening"
+spec:
+  sequence:
+    name: "artifact-delivery"
+    triggeredOn:
+    - event: "dev.artifact-delivery.finished"
+    tasks:
+    - name: "promotion"
+    - name: "deployment"
+      properties:
+        deploymentstrategy: "user_managed"
+    - name: "smoke-test"
+    - name: "release"
+
+---
+apiVersion: "keptn.sh/v1"
+kind: "KeptnSequence"
+metadata:
+  name: "podtato-delivery-production"
+spec:
+  sequence:
+    name: "artifact-delivery"
+    triggeredOn:
+    - event: "hardening.artifact-delivery.finished"
+    tasks:
+    - name: "promotion"
+    - name: "deployment"
+      properties:
+        deploymentstrategy: "user_managed"
+    - name: "smoke-test"
+    - name: "approval"
+      properties: 
+        pass: manual
+        warning: manual 
+    - name: "release"

@@ -1,0 +1,9 @@
+apiVersion: "keptn.sh/v1"
+kind: "KeptnProject"
+metadata:
+  name: "podtato-head"
+spec:
+  repository: "https://github.com/thschue/keptn-ca-demo-upstream"
+  username: keptncademo
+  password: "rsa:XwRmClug80Nzv09joErcxWQNkk3ihJ9XAmIqjBiyBAKRyeaPn1TvlMadiqK0c949nLAN/APCgiwycUS+/5pk+tAEgqSk/CdmkAP25s/f+3PLnZ2un9P/VkP+r3MgWqo9I9+kEb/zCP71oGgNXyvVhoZq8OTlOMSNq0SlqWsOntHjRZHSoGA3Ui/gxv94lWhKwPUycvOhzlaK+tZxZFzpRhqSL6exBgghE+qgJ0WOobQFwbJpqQKwDbnSQamiVmsK1EGeNh2Pa09zpMYgdAKkTfcuDp4gSlF3yvIQXdZ/x1pKpWgU8Tqib7qJ+KpT2DHsgGOau7E+tpazhy7DmtsH2w=="
+  defaultBranch: "deploy"

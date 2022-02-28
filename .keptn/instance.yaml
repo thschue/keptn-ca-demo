@@ -1,0 +1,8 @@
+apiVersion: "keptn.sh/v1"
+kind: "KeptnInstance"
+metadata:
+  name: "default"
+spec:
+  apiUrl: "https://axj73630.cloudautomation.sprint.dynatracelabs.com/api"
+  tokenType: "x-token"
+  apiToken: "rsa:SlUwNVuN8XdiEiktA26nUKkO9C8zlw8QWEdLWvs1v9VtjAy5L7pOUM3zoSvp7sABNyq5EttLY1UB5k9nq44DPW5CbO2w/sXKYRIPsnNdiLBpIggOTe+R37+R46rxW7tw8j7LSqmKUTF8YpyTyiImSOz0sIffkIIiMGvH8OcnZEgdOtLalWYN8ovD4aH4plxyZ8Hjc0mbbS4oJ+nf5q9gs1P+v+jc5IwsPPqo67YgNxGmaZgvW1Nl5nDGJsP13LKypF1OChrDqS5akcCqd3E4kX/leBqBb23h0fa1K6310pHQvYuqmsIRUEI2I+a1YujFshnMr7+IRFcSQjNx832t0A=="
