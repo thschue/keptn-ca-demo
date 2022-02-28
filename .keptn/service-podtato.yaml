@@ -6,3 +6,14 @@ spec:
   project: "podtato-head"
   service: "podtatohead"
   deploymentEvent: "artifact-delivery.triggered"
+
+---
+apiVersion: "keptn.sh/v1"
+kind: "KeptnServiceDeployment"
+metadata:
+  name: "podtatohead-dev"
+spec:
+  project: "podtato-head"
+  service: "podtatohead"
+  stage: "dev"
+  version: "0.0.1"
