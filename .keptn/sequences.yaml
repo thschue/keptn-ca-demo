@@ -11,8 +11,6 @@ spec:
     - name: "deployment"
       properties:
         deploymentstrategy: "user_managed"
-    - name: "smoke-test"
-    - name: "release"
 
 ---
 apiVersion: "keptn.sh/v1"
@@ -30,8 +28,6 @@ spec:
     - name: "deployment"
       properties:
         deploymentstrategy: "user_managed"
-    - name: "smoke-test"
-    - name: "release"
 
 ---
 apiVersion: "keptn.sh/v1"
@@ -49,9 +45,3 @@ spec:
     - name: "deployment"
       properties:
         deploymentstrategy: "user_managed"
-    - name: "smoke-test"
-    - name: "approval"
-      properties: 
-        pass: manual
-        warning: manual 
-    - name: "release"
