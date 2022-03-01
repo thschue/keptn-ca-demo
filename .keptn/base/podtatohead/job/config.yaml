@@ -28,6 +28,22 @@ actions:
           - name: SERVICE
             value: "$.data.service"
             valueFrom: event
+  - name: "monaco"
+    events:
+      - name: "sh.keptn.event.monaco.triggered"
+    tasks:
+      - name: "monaco"
+        files:
+          - /monaco
+        image: "tschue/monaco-runner:1.7.0"
+        cmd: ["monaco"]
+        args: ["-e", "/keptn/monaco/environments.yaml", "/keptn/monaco", "-se", "$(STAGE)"]
+        env:
+          - name: STAGE
+            value: "$.data.stage"
+            valueFrom: event
+          - name: DT_TENANT_TOKEN
+            valueFrom: secret
   - name: "release"
     events:
       - name: "sh.keptn.event.release.triggered"
