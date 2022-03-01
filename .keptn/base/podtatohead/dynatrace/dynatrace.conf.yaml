@@ -4,13 +4,14 @@ attachRules:
   tagRule:
     - meTypes:
         - PROCESS_GROUP_INSTANCE
+        - SERVICE
       tags:
-        - context: KUBERNETES
-          key: "app.kubernetes.io/part-of"
+        - context: CONTEXTLESS
+          key: keptn_project
           value: $PROJECT
-        - context: KUBERNETES
-          key: "app.kubernetes.io/name"
+        - context: CONTEXTLESS
+          key: keptn_service
           value: $SERVICE
-        - context: ENVIRONMENT
-          key: DT_APPLICATION_ENVIRONMENT
+        - context: CONTEXTLESS
+          key: keptn_stage
           value: $STAGE

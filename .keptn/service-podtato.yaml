@@ -16,4 +16,4 @@ spec:
   project: "podtato-head"
   service: "podtatohead"
   stage: "dev"
-  version: "0.0.21"
+  version: "0.0.22"
