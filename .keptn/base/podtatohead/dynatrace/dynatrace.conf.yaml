@@ -14,3 +14,6 @@ attachRules:
         - context: CONTEXTLESS
           key: keptn_stage
           value: $STAGE
+        - context: ENVIRONMENT
+          key: DT_RELEASE_VERSION
+          value: $LABELS.version
