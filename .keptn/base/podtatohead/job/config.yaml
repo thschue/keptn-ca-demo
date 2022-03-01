@@ -35,6 +35,7 @@ actions:
       - name: "monaco"
         files:
           - /monaco
+        workingDir: "/keptn/monaco"
         image: "thschue/monaco-runner:1.7.0"
         cmd: ["monaco"]
         args: ["-e", "/keptn/monaco/environments.yaml", "/keptn/monaco", "-se", "$(STAGE)"]
