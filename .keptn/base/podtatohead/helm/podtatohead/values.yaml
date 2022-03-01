@@ -11,54 +11,54 @@ keptn:
 # applies to all deployments in this chart
 replicaCount: 1
 images:
-  repositoryDirname: ghcr.io/podtato-head
+  repositoryDirname: docker.io/thschue
   pullPolicy: IfNotPresent
   pullSecrets: []
 
 # keep ports in sync with podtato-services/main/pkg/provider.go
 entry:
-  repositoryBasename: entry
-  tag: "0.2.1"
+  repositoryBasename: podtato-entry
+  tag: "0.2.7"
   serviceType: LoadBalancer
   servicePort: 9000
   env: []
   #   - name: PODTATO_PART_NUMBER
   #     value: "01"
 hat:
-  repositoryBasename: hat
-  tag: "0.2.1"
+  repositoryBasename: podtato-hat
+  tag: "0.2.7"
   serviceType: ClusterIP
   servicePort: 9001
   env: []
   #   - name: PODTATO_PART_NUMBER
   #     value: "01"
 leftLeg:
-  repositoryBasename: left-leg
-  tag: "0.2.1"
+  repositoryBasename: podtato-left-leg
+  tag: "0.2.7"
   serviceType: ClusterIP
   servicePort: 9002
   env: []
   #   - name: PODTATO_PART_NUMBER
   #     value: "01"
 leftArm:
-  repositoryBasename: left-arm
-  tag: "0.2.1"
+  repositoryBasename: podtato-left-arm
+  tag: "0.2.7"
   serviceType: ClusterIP
   servicePort: 9003
   env: []
   #   - name: PODTATO_PART_NUMBER
   #     value: "01"
 rightLeg:
-  repositoryBasename: right-leg
-  tag: "0.2.1"
+  repositoryBasename: podtato-right-leg
+  tag: "0.2.7"
   serviceType: ClusterIP
   servicePort: 9004
   env: []
   #   - name: PODTATO_PART_NUMBER
   #     value: "01"
 rightArm:
-  repositoryBasename: right-arm
-  tag: "0.2.1"
+  repositoryBasename: podtato-right-arm
+  tag: "0.2.7"
   serviceType: ClusterIP
   servicePort: 9005
   env: []
