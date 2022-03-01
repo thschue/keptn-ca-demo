@@ -8,12 +8,21 @@ actions:
         files:
           - /helm
         env:
-          - name: SERVICE
+          - name: KEPTN_STAGE
+            value: "$.data.stage"
+            valueFrom: event
+          - name: KEPTN_PROJECT
+            value: "$.data.project"
+            valueFrom: event
+          - name: KEPTN_SERVICE
             value: "$.data.service"
+            valueFrom: event
+          - name: VERSION
+            value: "$.data.labels.version"
             valueFrom: event
         image: "alpine/helm:3.8.0"
         cmd: ["helm"]
-        args: ["upgrade", "--create-namespace", "--install", "--atomic", "-n", "$(SERVICE)", "$(SERVICE)", "/keptn/helm/$(SERVICE)/.", "--wait"]
+        args: ["upgrade", "--create-namespace", "--set", "keptn.version=$(VERSION)", "--set", "keptn.stage=$(KEPTN_STAGE)", "--set", "keptn.project=$(KEPTN_PROJECT)", "keptn.service=$(KEPTN_SERVICE)", "--install", "--atomic", "-n", "$(KEPTN_SERVICE)", "$(KEPTN_SERVICE)", "/keptn/helm/$(KEPTN_SERVICE)/.", "--wait"]
   - name: "k6-smoke"
     events:
       - name: "sh.keptn.event.smoke-test.triggered"

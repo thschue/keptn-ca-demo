@@ -1,6 +1,13 @@
 nameOverride: ""
 fullnameOverride: ""
 
+keptn:
+  stage: "pre-dev"
+  version: "{{ keptn/ImageVersion }}"
+  project: ""
+  service: ""
+
+
 # applies to all deployments in this chart
 replicaCount: 1
 images:

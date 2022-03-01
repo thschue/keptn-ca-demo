@@ -71,6 +71,18 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.name
+            - name: DT_CUSTOM_PROP
+              value: "keptn_project={{ .Values.keptn.project }} keptn_service={{ .Values.keptn.service }} keptn_stage={{ .Values.keptn.stage }}"
+            - name: DEPLOYMENT_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: "metadata.labels['deployment']"
+            - name: DT_RELEASE_VERSION
+              value: "{{ .Values.keptn.version }}"
+            - name: DT_RELEASE_PRODUCT
+              value: "{{ .Values.keptn.project }}"
+            - name: DT_RELEASE_STAGE
+              value: "{{ .Values.keptn.stage }}"
           {{- if $env }}
             {{- toYaml $env | nindent 12 }}
           {{- end }}
