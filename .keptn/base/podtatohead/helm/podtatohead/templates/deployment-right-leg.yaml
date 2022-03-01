@@ -15,6 +15,7 @@ spec:
   selector:
     matchLabels:
       {{- include "podtato-head.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/part-of: "{{ .Values.keptn.project }}"
       app.kubernetes.io/component: {{ printf "%s-%s" (include "podtato-head.fullname" .) $componentName }}
   template:
     metadata:
