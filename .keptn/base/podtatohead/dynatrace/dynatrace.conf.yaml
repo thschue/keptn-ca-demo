@@ -4,7 +4,6 @@ attachRules:
   tagRule:
     - meTypes:
         - PROCESS_GROUP_INSTANCE
-        - SERVICE
       tags:
         - context: CONTEXTLESS
           key: keptn_project
