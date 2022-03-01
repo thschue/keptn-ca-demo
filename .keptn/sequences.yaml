@@ -11,7 +11,10 @@ spec:
     - name: "deployment"
       properties:
         deploymentstrategy: "user_managed"
+    - name: "test"
     - name: "evaluation"
+      properties:
+        timeframe: "2m"
 
 ---
 apiVersion: "keptn.sh/v1"

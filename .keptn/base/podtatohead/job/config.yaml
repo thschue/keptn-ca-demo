@@ -25,15 +25,18 @@ actions:
         args: ["upgrade", "--create-namespace", "--set", "keptn.version=$(VERSION)", "--set", "keptn.stage=$(KEPTN_STAGE)", "--set", "keptn.project=$(KEPTN_PROJECT)", "--set", "keptn.service=$(KEPTN_SERVICE)", "--install", "--atomic", "-n", "$(KEPTN_SERVICE)-$(KEPTN_STAGE)", "$(KEPTN_SERVICE)", "/keptn/helm/$(KEPTN_SERVICE)/.", "--wait"]
   - name: "k6-smoke"
     events:
-      - name: "sh.keptn.event.smoke-test.triggered"
+      - name: "sh.keptn.event.test.triggered"
     tasks:
       - name: "k6"
         files:
           - /k6
         image: "loadimpact/k6"
         cmd: ["k6"]
-        args: ["run", "-e", "SERVICE=$(SERVICE)", "--duration", "60s", "--vus", "30", "/keptn/k6/smoke.js"]
+        args: ["run", "-e", "SERVICE=$(SERVICE)", "-e", "STAGE=$(STAGE)", "--duration", "150s", "--vus", "30", "/keptn/k6/smoke.js"]
         env:
+          - name: STAGE
+            value: "$.data.stage"
+            valueFrom: event
           - name: SERVICE
             value: "$.data.service"
             valueFrom: event
