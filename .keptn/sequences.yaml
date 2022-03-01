@@ -11,6 +11,7 @@ spec:
     - name: "deployment"
       properties:
         deploymentstrategy: "user_managed"
+    - name: "evaluation"
 
 ---
 apiVersion: "keptn.sh/v1"
@@ -28,7 +29,7 @@ spec:
     - name: "deployment"
       properties:
         deploymentstrategy: "user_managed"
-
+    - name: "evaluation"
 ---
 apiVersion: "keptn.sh/v1"
 kind: "KeptnSequence"
@@ -45,3 +46,4 @@ spec:
     - name: "deployment"
       properties:
         deploymentstrategy: "user_managed"
+    - name: "evaluation"
