@@ -42,7 +42,7 @@ actions:
           - name: STAGE
             value: "$.data.stage"
             valueFrom: event
-          - name: DT_TENANT_TOKEN
+          - name: dynatrace 
             valueFrom: secret
   - name: "release"
     events:
