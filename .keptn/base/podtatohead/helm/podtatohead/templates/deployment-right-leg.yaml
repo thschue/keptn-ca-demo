@@ -81,7 +81,7 @@ spec:
             - name: DT_RELEASE_VERSION
               value: "{{ .Values.keptn.version }}"
             - name: DT_RELEASE_PRODUCT
-              value: "{{ .Values.keptn.project }}"
+              value: "{{ .Values.keptn.service }}"
             - name: DT_RELEASE_STAGE
               value: "{{ .Values.keptn.stage }}"
           {{- if $env }}
