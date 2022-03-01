@@ -16,4 +16,4 @@ attachRules:
           value: $STAGE
         - context: ENVIRONMENT
           key: DT_RELEASE_VERSION
-          value: $LABELS.version
+          value: $LABEL.version
