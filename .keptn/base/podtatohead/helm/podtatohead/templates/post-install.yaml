@@ -1,5 +1,5 @@
 {{ $componentName := "upgrade-hook" }}
-
+---
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -18,7 +18,7 @@ spec:
       name: "{{ .Release.Name }}"
       labels:
         {{- include "podtato-head.labels" . | nindent 8 }}
-    app.kubernetes.io/component: {{ printf "%s-%s" (include "podtato-head.fullname" .) $componentName }}
+        app.kubernetes.io/component: {{ printf "%s-%s" (include "podtato-head.fullname" .) $componentName }}
     spec:
       restartPolicy: Never
       containers:
