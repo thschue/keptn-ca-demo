@@ -34,7 +34,7 @@ Create chart name and version as used by the chart label.
 Common labels
 */}}
 {{- define "podtato-head.labels" -}}
-app.kubernetes.io/part-of: {{ .Values.keptn.project }}
+app.kubernetes.io/part-of: {{ .Values.keptn.project  }}
 helm.sh/chart: {{ include "podtato-head.chart" . }}
 {{ include "podtato-head.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
