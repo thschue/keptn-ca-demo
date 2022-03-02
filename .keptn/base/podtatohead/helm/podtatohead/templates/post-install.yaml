@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: "{{ Release.Name }}"
+  name: "{{ .Release.Name }}"
   labels:
     {{ include "podtato-head.labels" . | nindent 4 }}
   annotations:
