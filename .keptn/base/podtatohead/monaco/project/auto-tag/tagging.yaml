@@ -18,4 +18,4 @@ keptn-deployment-tag:
   - name: "keptn_deployment"
 
 keptn-version-tag:
-  - name: "keptn_deployment"
+  - name: "keptn_version"
