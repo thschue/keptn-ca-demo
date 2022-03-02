@@ -8,15 +8,6 @@ actions:
         files:
           - /helm
         env:
-          - name: KEPTN_STAGE
-            value: "$.data.stage"
-            valueFrom: event
-          - name: KEPTN_PROJECT
-            value: "$.data.project"
-            valueFrom: event
-          - name: KEPTN_SERVICE
-            value: "$.data.service"
-            valueFrom: event
           - name: VERSION
             value: "$.data.labels.version"
             valueFrom: event
@@ -32,14 +23,7 @@ actions:
           - /k6
         image: "loadimpact/k6"
         cmd: ["k6"]
-        args: ["run", "-e", "SERVICE=$(SERVICE)", "-e", "STAGE=$(STAGE)", "--duration", "150s", "--vus", "60", "/keptn/k6/smoke.js"]
-        env:
-          - name: STAGE
-            value: "$.data.stage"
-            valueFrom: event
-          - name: SERVICE
-            value: "$.data.service"
-            valueFrom: event
+        args: ["run", "-e", "SERVICE=$(KEPTN_SERVICE)", "-e", "STAGE=$(KEPTN_STAGE)", "--duration", "150s", "--vus", "60", "/keptn/k6/smoke.js"]
   - name: "monaco"
     events:
       - name: "sh.keptn.event.monaco.triggered"
@@ -52,15 +36,6 @@ actions:
         cmd: ["monaco"]
         args: ["-e", "environments.yaml", "-se", "$(KEPTN_STAGE)"]
         env:
-          - name: KEPTN_STAGE
-            value: "$.data.stage"
-            valueFrom: event
-          - name: KEPTN_PROJECT
-            value: "$.data.project"
-            valueFrom: event
-          - name: KEPTN_SERVICE
-            value: "$.data.service"
-            valueFrom: event
           - name: dynatrace 
             valueFrom: secret
   - name: "release"
@@ -69,7 +44,4 @@ actions:
     tasks:
       - name: "argo-promote"
         image: "quay.io/argoproj/kubectl-argo-rollouts:master"
-        args: ["promote","$(SERVICE)","-n","$(SERVICE)"]
-        env:
-          - name: SERVICE
-            value: "$.data.service"
+        args: ["promote","$(KEPTN_SERVICE)","-n","$(KEPTN_SERVICE)"]

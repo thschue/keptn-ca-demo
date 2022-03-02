@@ -24,4 +24,4 @@ spec:
       containers:
         - name: post-install-job
           image: "alpine:3.15"
-          command: ["/bin/sleep","75"]
+          command: ["/bin/sleep","120"]
