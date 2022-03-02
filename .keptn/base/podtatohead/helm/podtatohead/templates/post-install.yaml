@@ -1,9 +1,11 @@
+{{ $componentName := "upgrade-hook" }}
+
 apiVersion: batch/v1
 kind: Job
 metadata:
   name: "{{ .Release.Name }}"
   labels:
-    {{ include "podtato-head.labels" . | nindent 4 }}
+    {{- include "podtato-head.labels" . | nindent 4 }}
   annotations:
     # This is what defines this resource as a hook. Without this line, the
     # job is considered part of the release.
@@ -15,7 +17,8 @@ spec:
     metadata:
       name: "{{ .Release.Name }}"
       labels:
-        {{ include "podtato-head.labels" . | nindent 4 }}
+        {{- include "podtato-head.labels" . | nindent 8 }}
+    app.kubernetes.io/component: {{ printf "%s-%s" (include "podtato-head.fullname" .) $componentName }}
     spec:
       restartPolicy: Never
       containers:
