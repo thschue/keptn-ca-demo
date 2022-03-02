@@ -73,7 +73,7 @@ spec:
                 fieldRef:
                   fieldPath: metadata.name
             - name: DT_CUSTOM_PROP
-              value: "keptn_project={{ .Values.keptn.project }} keptn_service={{ .Values.keptn.service }} keptn_stage={{ .Values.keptn.stage }}"
+              value: "keptn_version={{ .Values.keptn.version }} keptn_project={{ .Values.keptn.project }} keptn_service={{ .Values.keptn.service }} keptn_stage={{ .Values.keptn.stage }}"
             - name: DEPLOYMENT_NAME
               valueFrom:
                 fieldRef:
