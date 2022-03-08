@@ -19,7 +19,7 @@
         "value": {
           "context": "ENVIRONMENT",
           "key": "DT_RELEASE_PRODUCT",
-          "value": "{{ .project }}"
+          "value": "{{ .service }}"
         },
         "values": null,
         "negate": false

@@ -5,9 +5,9 @@ config:
 tenantfastercount:
   - name: "Calculated.ResponseTime.Count.Faster500ms"
   - metricKey: "calc:service.responsetime.count.faster500ms"
-  - project: "{{ .Env.KEPTN_PROJECT }}"
+  - service: "{{ .Env.KEPTN_SERVICE }}"
 
 tenantrtbyversion:
   - name: "Calculated.ResponseTime.ByVersion"
   - metricKey: "calc:service.responsetime.byversion"
-  - project: "{{ .Env.KEPTN_PROJECT }}"
+  - service: "{{ .Env.KEPTN_SERVICE }}"
