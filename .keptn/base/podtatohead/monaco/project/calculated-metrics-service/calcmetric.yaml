@@ -1,11 +1,5 @@
 config:
-  - tenantfastercount: "calcslometric.json"
   - tenantrtbyversion: "calcversionmetric.json"
-
-tenantfastercount:
-  - name: "Calculated.ResponseTime.Count.Faster500ms"
-  - metricKey: "calc:service.responsetime.count.faster500ms"
-  - service: "{{ .Env.KEPTN_SERVICE }}"
 
 tenantrtbyversion:
   - name: "Calculated.ResponseTime.ByVersion"
