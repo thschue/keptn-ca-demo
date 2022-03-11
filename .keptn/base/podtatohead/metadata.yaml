@@ -1,5 +1,5 @@
 apiVersion: keptn.sh/v1
 kind: KeptnArtifactMetadata
 spec:
-  version: "0.0.57"
+  version: "0.0.58"
   project: "podtato-head"
