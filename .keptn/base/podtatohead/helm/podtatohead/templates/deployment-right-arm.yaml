@@ -89,6 +89,12 @@ spec:
           {{- end }}
   strategy:
     blueGreen:
+      activeMetadata:
+        labels:
+          role: active
+      previewMetadata:
+        labels:
+          role: preview
       # activeService specifies the service to update with the new template hash at time of promotion.
       # This field is mandatory for the blueGreen update strategy.
       activeService: {{ printf "%s-%s" (include "podtato-head.fullname" .) $componentName }}
