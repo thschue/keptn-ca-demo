@@ -47,4 +47,4 @@ actions:
     tasks:
       - name: "argo-promote"
         image: "quay.io/argoproj/kubectl-argo-rollouts:master"
-        args: ["promote","$(KEPTN_SERVICE)","-n","$(KEPTN_SERVICE)"]
+        args: ["promote","$(KEPTN_SERVICE)","-n","$(KEPTN_SERVICE)-$(KEPTN_STAGE)"]
